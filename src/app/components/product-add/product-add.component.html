@@ -1,0 +1,172 @@
+
+<div class="panel panel-primary" >
+  <div class="panel-heading">Ajout d'un produit</div>
+  <div class="panel-body">
+      <form   #f="ngForm" (ngSubmit)="addProduct()" class="form-horizontal" name="form" novalidate>
+          <div class="form-group">
+              <label for="id" class="col-md-2 control-label">Id </label>
+              <div class="col-md-5">
+                  <input type="number" class="form-control"
+                         id="id"
+                         placeholder="Id du Produit (entier)"
+                         name="id"
+                         [(ngModel)]="product.productId"
+                         #id="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5"  [hidden]="id.valid || (id.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le Id est obligatoire !
+              </span>
+
+              </label>
+          </div>
+          <div class="form-group">
+              <label for="nom" class="col-md-2 control-label">Nom du produit</label>
+              <div class="col-md-5">
+                  <input type="text" class="form-control"
+                         id="nom" placeholder="Nom du Produit (texte)"
+                         name="nom"
+                         [(ngModel)]="product.productName"
+                         #nom="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5" [hidden]="nom.valid || (nom.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le nom est obligatoire !
+              </span>
+
+              </label>
+          </div>
+          <div class="form-group">
+              <label for="code" class="col-md-2 control-label">Code du Produit</label>
+              <div class="col-md-5">
+                  <input type="text" class="form-control"
+                         id="code" placeholder="Code du produit (texte)"
+                         name="code"
+                         [(ngModel)]="product.productCode"
+                         #code="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5" [hidden]="code.valid || (code.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le code est obligatoire !
+              </span>
+
+              </label>
+          </div>
+             <div class="form-group">
+              <label for="date" class="col-md-2 control-label">Date de lancement</label>
+              <div class="col-md-5">
+                  <input type="date" class="form-control"
+                         id="date" placeholder="Date de Lancement (date)"
+                         name="date"
+                         [(ngModel)]="product.releaseDate"
+                         #date="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5" [hidden]="date.valid || (date.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  La date de lancement est obligatoire !
+              </span>
+
+              </label>
+          </div>
+              <div class="form-group">
+              <label for="description" class="col-md-2 control-label">Description du Produit</label>
+              <div class="col-md-5">
+                  <input type="text" class="form-control"
+                         id="description" placeholder="Description produit (texte)"
+                         name="description"
+                         [(ngModel)]="product.description"
+                         #description="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5" [hidden]="description.valid || (description.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  La description est obligatoire !
+              </span>
+
+              </label>
+          </div>
+
+            <div class="form-group">
+              <label for="price" class="col-md-2 control-label">Prix unitaire </label>
+              <div class="col-md-5">
+                  <input type="number" class="form-control"
+                         id="price"
+                         placeholder="Prix du Produit (numérique)"
+                         name="price"
+                         [(ngModel)]="product.price"
+                         #price="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5"  [hidden]="price.valid || (price.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le price est obligatoire !
+              </span>
+
+              </label>
+          </div>
+
+<div class="form-group">
+              <label for="rating" class="col-md-2 control-label">Rating </label>
+              <div class="col-md-5">
+                  <input type="number" class="form-control"
+                         id="rating"
+                         placeholder="Star Rating du Produit (0 à 5)"
+                         name="rating"
+                         [(ngModel)]="product.starRating"
+                         #rating="ngModel"
+                         required
+                  >
+              </div>
+              <label class="col-md-5"  [hidden]="rating.valid || (rating.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le Rating est obligatoire !
+              </span>
+
+              </label>
+          </div>
+
+   <div class="form-group">
+              <label for="image" class="col-md-2 control-label">Image Url </label>
+              <div class="col-md-5">
+                  <input type="text" class="form-control"
+                         id="image"
+                         placeholder="URL de l'image (url)"
+                         name="image"
+                         [(ngModel)]="product.imageUrl"
+                         #image="ngModel"
+
+                  >
+              </div>
+              <label class="col-md-5"  [hidden]="image.valid || (image.pristine && !f.submitted)">
+              <span class="text text-danger" >
+                  Le Image url est obligatoire !
+              </span>
+
+              </label>
+          </div>
+
+
+
+          <div class="form-group">
+              <div class="col-md-offset-2 col-md-10">
+                  <button type="submit"   [disabled]="!f.valid"
+                          class="btn btn-primary"
+
+                  >Ajouter Le produit !</button>
+              </div>
+          </div>
+      </form>
+     </div>
+</div>
+
+<!-- Fin du panneau du formulaire -->

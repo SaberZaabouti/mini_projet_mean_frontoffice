@@ -1,4 +1,4 @@
-# MyApmModuleXFrontofficeRouting2LayoutDetails
+# my-apm-module12-frontoffice-routing2-layout-add-details
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
