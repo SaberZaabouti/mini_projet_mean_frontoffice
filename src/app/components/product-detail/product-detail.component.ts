@@ -9,7 +9,7 @@ import { ProductService } from '../../services/product.service';
   templateUrl: './product-detail.component.html'
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
-  pageTitle: string = 'Product Detail';
+  pageTitle: string = 'Détail du produit';
   product: IProduct;
   errorMessage: string;
   private sub: Subscription;

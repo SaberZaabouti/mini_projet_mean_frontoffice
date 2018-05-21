@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class WelcomeComponent implements OnInit {
 
   // tslint:disable-next-line:no-inferrable-types
-  pageTitle: string= 'Bienvenue à l\'INSAT';
+  pageTitle: string = 'Bienvenue à l\'UVT';
   constructor() { }
 
   ngOnInit() {

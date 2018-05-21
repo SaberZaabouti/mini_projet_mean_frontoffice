@@ -19,14 +19,16 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { HttpModule } from '@angular/http';
 import { ProductDetailGuard } from './services/product-guard.service';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+//import { ProductRemoveComponent } from './components/product-remove/product-remove.component';
 
 const routes: Routes = [
    { path: 'welcome',  component: WelcomeComponent },
    { path: 'list',  component: ProductListComponent },
    { path: 'add',  component: ProductAddComponent },
-   { path: 'product/:id',
-            // canActivate: [ ProductDetailGuard ],
+   { path: 'product/:id', canActivate: [ ProductDetailGuard ],
             component: ProductDetailComponent },
+   //{ path: 'remove/:id', canActivate: [ ProductDetailGuard ],
+   //    component: ProductRemoveComponent },
    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
    { path: 'not-found', component: NotfoundComponent },
    { path: '**', redirectTo: 'not-found' }
@@ -44,7 +46,8 @@ const routes: Routes = [
     WelcomeComponent,
     NotfoundComponent,
     ProductAddComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    //ProductRemoveComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,10 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    ProductDetailGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
